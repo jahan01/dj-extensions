@@ -1,16 +1,19 @@
 from setuptools import setup, find_packages
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
 setup(
     name="dj-extensions",
-    version="0.1.5",
+    version="0.1.5post1",
     description="Yet another Django extension with set of generic reusable, pluggable mixins",
-    # long_description="Mixins for enhancing Django views",
-    keywords="django, views, mixins",
+    long_description=readme(),
+    keywords="django views mixins",
     author="Jahan <jahan.unofficial@gmail.com>",
     author_email="jahan.unofficial@gmail.com",
-    url="https://github.com/jahan01/dj-extensions/",
+    url="https://github.com/jahan01/dj-extensions",
     license="MIT",
-    # packages=["dj_extensions"],
     packages=find_packages(),
     zip_safe=False,
     install_requires=['Django >= 1.7'],
