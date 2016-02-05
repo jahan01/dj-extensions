@@ -6,7 +6,7 @@ def readme():
 
 setup(
     name="dj-extensions",
-    version="0.1.5post1",
+    version="0.1.5post2",
     description="Yet another Django extension with set of generic reusable, pluggable mixins",
     long_description=readme(),
     keywords="django views mixins",
