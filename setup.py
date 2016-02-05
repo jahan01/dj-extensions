@@ -10,7 +10,7 @@ setup(
     description="Yet another Django extension with set of generic reusable, pluggable mixins",
     long_description=readme(),
     keywords="django views mixins",
-    author="Jahan <jahan.unofficial@gmail.com>",
+    author="Jahan Balasubramaniam",
     author_email="jahan.unofficial@gmail.com",
     url="https://github.com/jahan01/dj-extensions",
     license="MIT",

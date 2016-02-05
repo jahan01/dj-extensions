@@ -45,8 +45,9 @@ Installation
 
 **Source code:** Find the source code `here`_ at github
 
-**Documentation:** To be done. For now, please refer to the comments in the source code.
+**Documentation:** Please find it here at the `readthedocs`_
 
 **License: MIT**
 
 .. _here: https://github.com/jahan01/dj-extensions
+.. _readthedocs: http://dj-extensions.readthedocs.org/en/latest/index.html
