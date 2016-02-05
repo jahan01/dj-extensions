@@ -21,6 +21,8 @@ __Currently includes following Mixins:__
 
 __Usage:__
 ```python
+from dj_extensions.views import PermissionsRequiredMixin, FilterMixin, PaginationMixin
+
 class SomeView(PermissionsRequiredMixin, FilterMixin, PaginationMixin, ListView):
     model                = <Your Model>
     paginated_by         = 10
@@ -34,6 +36,8 @@ class SomeView(PermissionsRequiredMixin, FilterMixin, PaginationMixin, ListView)
                             'age' : 'age_exact',
                            }
 ```
+
+___Source code:___ Find the source code [here](https://github.com/jahan01/dj-extensions) at github
 
 ___Documentation:___ To be done. For now, please refer to the comments in the source code.
 
