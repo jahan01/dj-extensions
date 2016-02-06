@@ -14,6 +14,9 @@
     :target: http://dj-extensions.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
+.. image:: https://codecov.io/github/jahan01/dj-extensions/coverage.svg?branch=master
+    :target: https://codecov.io/github/jahan01/dj-extensions?branch=master
+
 **Copyright** |copy| **2016 Jahan Balasubramaniam**
 
 Django Extensions
