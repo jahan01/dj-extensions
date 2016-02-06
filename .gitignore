@@ -2,6 +2,11 @@
 *.egg
 *.egg-info
 *.sublime-*
+*.sqlite3
+*migrations*
+*htmlcov*
+*.coverage
+build/*
 dist*
 docs/_build*
 docs/_static*

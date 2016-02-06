@@ -1,5 +1,19 @@
 .. |copy|    unicode:: U+000A9 .. COPYRIGHT SIGN
 
+.. image:: https://travis-ci.org/jahan01/dj-extensions.svg?branch=master
+    :target: https://travis-ci.org/jahan01/dj-extensions
+    :alt: master
+
+.. image:: https://badge.fury.io/py/dj-extensions.svg
+    :target: https://badge.fury.io/py/dj-extensions
+
+.. image:: https://coveralls.io/repos/github/jahan01/dj-extensions/badge.svg?branch=master
+    :target: https://coveralls.io/github/jahan01/dj-extensions?branch=master
+
+.. image:: https://readthedocs.org/projects/dj-extensions/badge/?version=latest
+    :target: http://dj-extensions.readthedocs.org/en/latest/?badge=latest
+    :alt: Documentation Status
+
 **Copyright** |copy| **2016 Jahan Balasubramaniam**
 
 Django Extensions

@@ -1,0 +1,18 @@
+language: python
+services: sqlite
+env:
+    - DJANGO='django==1.8'
+python:
+    - 2.7
+install:
+    - pip install $DJANGO
+    - python setup.py install
+    - pip install coveralls
+    - pip install coverage
+before_script:
+    - cd tests/testproject
+    - python manage.py makemigrations
+script:
+    - 'coverage run --source=dj_extensions,testapp manage.py test'
+after_success:
+    - coveralls
