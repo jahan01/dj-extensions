@@ -46,7 +46,7 @@ Installation
 
     class SomeView(PermissionsRequiredMixin, FilterMixin, PaginationMixin, ListView):
         model                = YourModel
-        paginated_by         = 10
+        paginate_by         = 10
         n_list               = 5
         required_permissions = (
                                 'app.permission1',

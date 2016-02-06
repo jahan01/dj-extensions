@@ -41,38 +41,11 @@ class AjaxOnlyMixin(object):
 
 class PaginationMixin(object):
     """
-    Mixin which allows List views to be paginated.
-    Along with links to prev and next it provides a list of previous and proceeding n pages
-
-    Add following to your template to place navingation links
-
-    In your template:
-
-        <nav>
-          <ul class="pagination">
-            {% if page_obj.has_previous %}
-              <li><a href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-              {% for i in page_obj.paginator.page_range|slice:page_dict.prev %}
-                <li><a href="?page={{ i }}">{{ i }}</a></li>
-              {% endfor %}
-            {% else %}
-              <li><a href="javascript:;" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-            {% endif %}
-            <li class="active"><a href="javascript:;"> {{ page_obj.number }} <span class="sr-only">(current)</span></a></li>
-            {% if page_obj.has_next %}
-              {% for i in page_obj.paginator.page_range|slice:page_dict.next %}
-                <li><a href="?page={{ i }}">{{ i }}</a></li>
-              {% endfor %}
-              <li><a href="?page={{ page_obj.next_page_number }}"><span aria-hidden="true">&raquo;</span></a></li>
-            {% else %}
-              <li><a href="javascript:;" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
-            {% endif %}
-          </ul>
-        </nav>
+    Mixin for google style paginations.
     """
 
     paginate_by = 5     # No. of objects to be listed in a page
-    n_list = 4          # No. of previous and proceding pages to be included
+    n_list      = 4     # No. of previous and proceding pages to be included in pagenation object
 
     def get_context_data(self, **kwargs):
         context = super(PaginationMixin, self).get_context_data(**kwargs)
@@ -91,23 +64,10 @@ class PaginationMixin(object):
 
 class FilterMixin(object):
     """
-    Mixin which allows List view to filter objects.
-    Supply filtering condition as http query strings in your request.
+    Mixin which allows List view to display filtered objects.
     """
 
     allowed_filters = None
-
-    """
-    Example:
-    Place this in your view
-
-    allowed_filters = {
-                       'name': 'emp_name__icontains',
-                       'age' : 'age_exact',
-                      }
-    key is name of query string
-    value is equivalent to filtering in Django ORM querysets
-    """
 
     def get_queryset_filters(self):
         filters = {}

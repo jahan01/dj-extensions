@@ -3,7 +3,7 @@ Contributions:
 
 To contribute you don't necessarily need to code. Any one of the following is considered as a contribution.
 
-- Filing an bug
+- Filing a bug
     - If you bug at code/documentation
     - Please raise the issue at `github`_ repo issue page
 - Correcting documentation or documenting undocumented parts

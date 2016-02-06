@@ -15,6 +15,11 @@ Mixin names explain roughly what they do.
 PermissionRequiredMixin
 -----------------------
 
+Checks for permission to access a view. If a user is unauthorised, request is redirected to login page.
+
+.. note::
+    For versions >=1.9, django provides in-built permission check mixin.
+
 **Usage:**
 
 .. code-block:: python
@@ -39,7 +44,7 @@ You can check for more than one permission too
                                 'app.permission2',
                             )
 
-The variable `required_permissions` is required.
+The variable :code:`required_permissions` is required.
 
 .. note::
     No need to check for do login required check if you are doing permissions checks. In either case if the check fails, the user will be redirected to login page
@@ -50,7 +55,7 @@ The variable `required_permissions` is required.
 AjaxOnlyMixin
 -------------
 
-This mixin allows only the ajax requests and returns HttpForbiddenError if the request is not ajax.
+This mixin allows only the ajax requests and returns :code:`HttpForbiddenError` if the request is not ajax.
 
 **Usage:**
 
@@ -67,7 +72,9 @@ This mixin allows only the ajax requests and returns HttpForbiddenError if the r
 PaginationMixin
 ---------------
 
-This mixin provides list of links to previous and next `n` number of pages, in addition to just previous and next links provided by default.
+Google style paginations for your django list views.
+
+This mixin provides list of links to previous and next :code:`n_list` number of pages, in addition to just previous and next links provided by default.
 
 **Usage:**
 
@@ -78,8 +85,15 @@ This mixin provides list of links to previous and next `n` number of pages, in a
 
     class SomeView(PaginationMixin, ListView):
         model                = YourModel
-        paginated_by         = 10
+        paginate_by          = 10
         n_list               = 5
+
+Default values are
+
+.. code-block:: python
+
+    paginate_by = 5
+    n_list      = 4
 
 In your template for this view, add the following lines:
 
@@ -133,14 +147,42 @@ This mixin is used filter your list view based on query strings from http reques
                                }
 
 
-The key of the `allowed_filters` dict is the query string and value is the django ORM filter opertation.
+The key of the :code:`allowed_filters` dict is the query string and value is the django ORM filter opertation.
 
-For example, the request `http://localhost:8000/some_view?name=foo&age=21` will perform
+For example, the request :code:`http://localhost:8000/some_view?name=foo&age=21` will perform
 
 ::
 
-    yourmodel.objects.filter(emp_name_icontains='foo').filter(age_exact=21)
+    YourModel.objects.filter(emp_name_icontains='foo').filter(age_exact=21)
 
 
 .. note::
     This mixin only works with List views.
+
+
+.. _CombineMultipleMixin:
+
+Combine Multiple Mixins
+-----------------------
+
+You can combine multiple mixins if required.
+
+For example, there may be a use-case where you want your list view to be paginated, check for permissions and support filtering as
+well. For this case your view class will be:
+
+.. code:: python
+
+    from dj_extensions.views import PermissionsRequiredMixin, FilterMixin, PaginationMixin
+
+    class SomeView(PermissionsRequiredMixin, FilterMixin, PaginationMixin, ListView):
+        model                = YourModel
+        paginate_by         = 10
+        n_list               = 5
+        required_permissions = (
+                                'app.permission1',
+                                'app.permission2',
+                               )
+        allowed_filters      = {
+                                'name': 'emp_name__icontains',
+                                'age' : 'age_exact',
+                               }
