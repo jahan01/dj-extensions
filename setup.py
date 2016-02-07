@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+from dj_extensions import __version__
 
 def readme():
     with open('README.rst') as f:
@@ -6,7 +7,7 @@ def readme():
 
 setup(
     name="dj-extensions",
-    version="0.1.6",
+    version=__version__,
     description="Yet another Django extension with set of generic reusable, pluggable mixins",
     long_description=readme(),
     keywords="django views mixins",
