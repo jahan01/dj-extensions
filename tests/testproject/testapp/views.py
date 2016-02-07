@@ -59,4 +59,4 @@ class PaginatedView(PaginationMixin, ListView):
     def get(self, request, *args, **kwargs):
         listview = super(PaginatedView, self).get(request, *args, **kwargs)
         page_dict = listview.context_data['page_dict']
-        return HttpResponse("Page dict: %s" % page_dict)
+        return HttpResponse("Page dict:- next:%s, prev:%s" % (page_dict['next'], page_dict['prev']))

@@ -141,7 +141,7 @@ class TestPaginationMixin(BaseTest):
     def check(self, param, prev, next):
         request_url = self.view_url + param
         response = self.client.get(request_url)
-        self.assertContains(response, "Page dict: {'prev': '%s', 'next': '%s'}" % (prev, next))
+        self.assertEqual(response.content.decode("utf-8"), "Page dict:- next:%s, prev:%s" % (next, prev))
 
     def check_not_found(self, param):
         request_url = self.view_url + param
