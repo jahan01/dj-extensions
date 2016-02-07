@@ -20,13 +20,14 @@ See :doc:`contribution`
 Get started:
 ------------
 
-Install `dj-extensions` via pip:
+:code:`dj-extensions` can be found in pypi repository and can be installed via pip
 
 ::
 
     pip install dj-extensions
 
 Contents:
+---------
 
 .. toctree::
     :maxdepth: 2
@@ -35,6 +36,30 @@ Contents:
     View Mixins <views>
     Contributions <contribution>
 
+.. image:: https://travis-ci.org/jahan01/dj-extensions.svg?branch=master
+    :target: https://travis-ci.org/jahan01/dj-extensions
+    :alt: master
+
+.. image:: https://badge.fury.io/py/dj-extensions.svg
+    :target: https://badge.fury.io/py/dj-extensions
+
+.. image:: https://coveralls.io/repos/github/jahan01/dj-extensions/badge.svg?branch=master
+    :target: https://coveralls.io/github/jahan01/dj-extensions?branch=master
+
+.. image:: https://codecov.io/github/jahan01/dj-extensions/coverage.svg?branch=master
+    :target: https://codecov.io/github/jahan01/dj-extensions?branch=master
+
+.. image:: https://readthedocs.org/projects/dj-extensions/badge/?version=latest
+    :target: http://dj-extensions.readthedocs.org/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: http://readthedocs.org/projects/dj-extensions/badge/?version=stable
+    :target: http://dj-extensions.readthedocs.org/en/stable/?badge=stable
+    :alt: Documentation Status
+
+.. image:: http://img.shields.io/badge/license-MIT-brightgreen.svg
+    :target: http://opensource.org/licenses/MIT
+
 
 Indices and tables
 ==================
@@ -42,5 +67,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
 
 .. _GithubRepo: https://github.com/jahan01/dj-extensions
