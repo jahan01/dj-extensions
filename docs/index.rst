@@ -10,31 +10,50 @@
 Welcome to dj-extensions's documentation!
 =========================================
 
+.. note::    
+    **This doc is for version:** |release|. 
+
+    Current versions:
+
+    - `stable version`_: Lastest available stable release.
+    - `latest version`_: For bleeding edge version(not yet released in pypi).
+
 Yet another Django extension with set of generic reusable, pluggable mixins
 
 It has just started, there will be additions going forward.
 
 Contributions are always welcome. Find the source code at `GithubRepo`_ |br|
-See :doc:`contribution`
+See :doc:`contributions <contribution>` page
 
 Get started:
 ------------
 
-:code:`dj-extensions` can be found in pypi repository and can be installed via pip
+``dj-extensions`` can be found in pypi repository and can be installed via pip
 
 ::
 
     pip install dj-extensions
 
-Contents:
----------
+Table of Contents:
+------------------
 
 .. toctree::
     :maxdepth: 2
+    :caption: User Documentation
 
     Installation <install>
     View Mixins <views>
     Contributions <contribution>
+    Changelog <changelog>
+
+.. toctree::
+    :maxdepth: 2
+    :caption: For contributors
+
+    Modules <modules>
+
+Project status
+--------------
 
 .. image:: https://travis-ci.org/jahan01/dj-extensions.svg?branch=master
     :target: https://travis-ci.org/jahan01/dj-extensions
@@ -70,3 +89,5 @@ Indices and tables
 
 
 .. _GithubRepo: https://github.com/jahan01/dj-extensions
+.. _stable version: http://dj-extensions.readthedocs.org/en/stable/
+.. _latest version: http://dj-extensions.readthedocs.org/en/latest/
