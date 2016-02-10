@@ -40,9 +40,10 @@ You can check for more than one permission too
 
     class SomeView(PermissionsRequiredMixin, ListView):
         model                = YourModel
-        required_permissions = ('app.permission1',
+        required_permissions = (
+                                'app.permission1',
                                 'app.permission2',
-                            )
+                               )
 
 The variable :code:`required_permissions` is required.
 
@@ -176,7 +177,7 @@ well. For this case your view class will be:
 
     class SomeView(PermissionsRequiredMixin, FilterMixin, PaginationMixin, ListView):
         model                = YourModel
-        paginate_by         = 10
+        paginate_by          = 10
         n_list               = 5
         required_permissions = (
                                 'app.permission1',

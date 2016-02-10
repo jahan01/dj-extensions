@@ -1,9 +1,9 @@
 class PermissionsRequiredMixin(object):
     """
-    For versions <1.9.
-    Django >= 1.9 supports this by default.
+    For django versions <1.9.\n
+    django >= 1.9 supports this by default.
 
-    Mixin allows you to check for permission required to access the view
+    Mixin checks for required permissions for the view to authenticate users.
     """
 
     required_permissions = None # string or list/tuple of string stating required permission to access the view
@@ -29,7 +29,7 @@ class PermissionsRequiredMixin(object):
 
 class AjaxOnlyMixin(object):
     """
-    Mixin which throws HttpResponseForbidden error if request is not a ajax
+    Mixin throws HttpResponseForbidden error if request is not ajax.
     """
 
     def dispatch(self, request, *args, **kwargs):
@@ -64,7 +64,7 @@ class PaginationMixin(object):
 
 class FilterMixin(object):
     """
-    Mixin which allows List view to display filtered objects.
+    Mixin for filtering List view based on http request query strings.
     """
 
     allowed_filters = None
